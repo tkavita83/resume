@@ -1,0 +1,461 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/OpenSans-Medium.woff2') format('woff2'),
+        url('./fonts/OpenSans-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/OpenSans-ExtraBold.woff2') format('woff2'),
+        url('./fonts/OpenSans-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/OpenSans-Regular.woff2') format('woff2'),
+        url('./fonts/OpenSans-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/OpenSans-Bold.woff2') format('woff2'),
+        url('./fonts/OpenSans-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('./fonts/OpenSans-Light.woff2') format('woff2'),
+        url('./fonts/OpenSans-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans","Liberation Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    display: inline-block;
+    text-decoration: none;
+    color:var(--dark-grey);
+}
+
+p{
+    font-size: 17.5px;
+    color: var(--dark-grey);
+}
+
+body{
+    color:var(--dark-grey);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    color:var(--indigo-blue);
+}
+
+ul,li{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+:root{
+    --white:#ffffff;
+    --black:#000000;
+    --grey:#f4f4f4;
+    --indigo-blue:#5e31e9;
+    --dark-grey:#6c6c6c;
+    --lime:#ccf381;
+    --blue-grey:#f4f4fc;
+}
+
+.sticky_class{
+    position: sticky;
+    top: 60px;
+}
+
+.main_wrapper{
+    background-color: var(--white);
+    padding: 5rem 12rem;
+}
+
+.main_wrapper .inner_body{
+    background-color: var(--blue-grey);
+    padding: 3rem 4rem 4rem;
+}
+
+.main_wrapper .inner_body,
+.col-full{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.inner{
+    width: 100%;
+}
+
+.col-full{
+    padding: 0px 12px;
+    justify-content: flex-end;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+}
+
+.social_icon{
+    margin-left: 15px;
+}
+
+.social_icon a{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.social_icon a::before{
+    content: attr(data-title);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 7px 10px;
+    opacity: 0;
+    min-width: 120px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.5s ease;
+    font-size: 13.5px;
+    text-align: center;
+}
+
+.social_icon a::after{
+    content:"";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 7px 0 7px;
+    border-color: #ffffff transparent transparent transparent;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: 0.5s ease;
+    font-weight: 600;
+}
+
+.social_icon a:hover::before,
+.social_icon a:hover::after{
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}
+
+.social_icon a span{
+    margin-left:7px;
+    font-size: 14px;
+}
+
+.col-left{
+    width: 350px;
+    padding: 0 12px;
+    margin-top:12px;
+}
+
+.col-right{
+    width: calc(100% - 350px);
+    padding: 0 12px;
+    margin-top:12px;
+}
+
+.contact_info .hdng{
+    font-size: 16px;
+    position:relative;
+    display: inline-block;
+    z-index: 9;
+}
+
+.contact_info .hdng::before{
+    content:"";
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    bottom: 0px;
+    height: 5px;
+    background-color: var(--lime);
+    z-index: -1;
+}
+
+.contact_info p a,
+.contact_info p{
+    font-size: 15px;
+}
+
+.contact_info .inner:nth-child(2) {
+    margin-top: 10px;
+}
+
+.contact_info .inner .hdng {
+    margin-bottom: 5px;
+}
+
+.prof_info > .inner{
+    margin-top: 40px;
+}
+
+.prof_info .hdng{
+    font-size: 20px;
+}
+
+.prof_info ul{
+    padding-left: 20px;
+}
+
+.prof_info li{
+    font-size: 16px;
+    list-style: square;
+    margin-top: 10px;
+}
+
+.prof_info li b{
+    color:var(--black);
+    display: block;
+}
+
+.title .hdng{
+    font-size: 72px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.title .hdng span{
+    margin-top: 30px;
+    display: block;
+    font-size: 28px;
+    font-weight: 500;
+    color:var(--dark-grey);
+}
+
+.title .description{
+    margin-top: 50px;
+    font-size: 17.5px;
+    color: var(--dark-grey);
+    width: 700px;
+    max-width: 100%;
+    line-height: 1.8;
+}
+
+.line {
+    background: #e1e1e1;
+    border: 0;
+    height: 2px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.job_company .inner{
+    margin-top: 20px;
+}
+
+.job_company .exp{
+    font-size: 24px;
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+}
+
+.job_company .exp::before{
+    content:"";
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    bottom: 0px;
+    height: 7px;
+    background-color: var(--lime);
+    z-index: -1;
+}
+
+.job_company .hdng{
+    font-size: 20px;
+    line-height: 1;
+    font-weight: 600;
+}
+
+.job_company .hdng span,
+.job_company .hdng i{
+    color:var(--dark-grey);
+    font-size: 16px;
+    font-weight: 400;
+    margin-left: 10px;
+    padding-left: 50px;
+    position: relative;
+}
+
+.job_company .hdng span::before{
+    content:"";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 1px;
+    background:#b4b4b4;
+}
+
+
+.job_company .hdng i{
+    font-size: 14px;
+    float: right;
+}
+
+.job_company p{
+    width: 700px;
+    max-width: 100%;
+    margin-top: 12px;
+    line-height: 1.8;
+}
+
+.job_company p b{
+    color:var(--black);
+}
+
+.job_company ul{
+    padding-left: 20px;
+}
+
+.job_company li{
+    font-size: 17px;
+    list-style: square;
+    margin-top: 10px;
+    width: 700px;
+    max-width: 100%;
+}
+.btm_hdng{
+    font-size: 32px;
+    margin-top: 40px;
+}
+
+@media screen and (max-width:1903px){
+    .main_wrapper {
+        padding: 5rem 10rem;
+    }
+}
+
+@media screen and (max-width:1600px){
+    .main_wrapper {
+        padding: 4rem 7rem;
+    }
+}
+
+@media screen and (max-width:1400px){
+    .main_wrapper {
+        padding: 3rem 3rem;
+    }
+    .title .hdng {
+        font-size: 62px;
+    }
+}
+
+@media screen and (max-width:1200px){
+    .main_wrapper {
+        padding: 2rem 2rem;
+    }
+    .title .hdng {
+        font-size: 56px;
+    }
+    .main_wrapper .inner_body {
+        padding: 2rem 2rem;
+    }
+}
+
+@media screen and (max-width:992px){
+    .col-left {
+        width: 280px;
+    }
+    .col-right {
+        width: calc(100% - 280px);
+    }
+    .title .hdng {
+        font-size: 52px;
+    }
+
+    .job_company .hdng span {
+        display: block;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .job_company .hdng i{
+        position: relative;
+        top: -40px;
+    }
+}
+
+@media screen and (max-width:800px){
+    .col-left {
+        width: 100%;
+    }
+    .col-right {
+        width: 100%;
+        margin-top: 60px;
+    }
+    .prof_info {
+        flex-direction: row;
+        display: flex;
+    }
+}
+
+@media screen and (max-width:500px){
+    .main_wrapper,
+    .main_wrapper .inner_body  {
+        padding: 1rem 1rem;
+    }
+    .prof_info {
+        flex-direction: column;
+    }
+    .title .hdng {
+        font-size: 42px;
+    }
+    .job_company .hdng i {
+        top: unset;
+        margin-top: 12px;
+        float: unset;
+        display: block;
+    }
+    .job_company p {
+        margin-top: 30px;
+    }
+}
